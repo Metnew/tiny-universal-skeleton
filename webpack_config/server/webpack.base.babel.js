@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import webpack from 'webpack'
 import config from '../config'
-import isomorphicWebpackConfig from '../webpack.isomorphic'
+import isomorphicWebpackConfig from '../isomorphic.config'
 import childProcess from 'child_process'
 
 // Cleare dist dir before run
@@ -11,6 +11,7 @@ exec(`rm -rf ${config.distPath}/server`)
 
 const definePluginArgs = {
 	'process.env.BROWSER': JSON.stringify(false),
+	'process.env.NODE_ENV': JSON.stringify(config.NODE_ENV),
 	'process.env.CLIENT_DIST_PATH': JSON.stringify(config.CLIENT_DIST_PATH)
 }
 
@@ -46,8 +47,11 @@ const baseWebpackConfig = {
 		extensions: isomorphicWebpackConfig.resolve.extensions,
 		modules: isomorphicWebpackConfig.resolve.modules,
 		alias: {
-			'webpack-assets': `${CLIENT_DIST_PATH}/webpack-assets.json`
+			'webpack-assets': `${config.CLIENT_DIST_PATH}/webpack-assets.json`
 		}
+	},
+	module: {
+		rules: isomorphicWebpackConfig.module.rules
 	},
 	plugins: isomorphicWebpackConfig.plugins.concat([
 		new webpack.DefinePlugin(definePluginArgs)
