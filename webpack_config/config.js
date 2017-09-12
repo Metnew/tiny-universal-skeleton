@@ -11,7 +11,7 @@ const srcPath = path.join(rootPath, './src') // = "/src"
 const srcCommonPath = path.join(srcPath, './common') // = "/src/common"
 
 const NODE_ENV = process.env.NODE_ENV || 'development'
-const CLIENT_DIST_PATH = path.join(distPath, './client')
+const CLIENT_DIST_PATH = path.join(distPath, './client') // = "/dist/client"
 
 // compute isProduction based on NODE_ENV
 const isProduction = NODE_ENV === 'production'
