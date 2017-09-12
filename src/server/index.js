@@ -1,4 +1,5 @@
 import express from 'express'
+import chalk from 'chalk'
 
 const app = express()
 const PORT = 3000
@@ -12,5 +13,5 @@ const serverDecorator = require(pathToServerDecorator).default
 serverDecorator(app)
 
 app.listen(PORT, () => {
-	console.log(`SERVER IS LISTENING ON ${PORT}`)
+	console.log(chalk.green(`SERVER IS LISTENING ON ${PORT}`))
 })
