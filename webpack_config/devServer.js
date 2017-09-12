@@ -5,8 +5,8 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackGetCodeOnDone from 'webpack-get-code-on-done'
-import client from './client'
-import server from './server'
+import client from './client/webpack.dev.babel'
+import server from './server/webpack.dev.babel'
 // Configs for MultiCompiler
 const webpackConfig = [client, server]
 // Get MultiCompiler
