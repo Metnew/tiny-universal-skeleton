@@ -2,7 +2,7 @@ import path from 'path'
 import childProcess from 'child_process'
 import webpack from 'webpack'
 import config from '../config'
-import isomorphicWebpackConfig from '../webpack.isomorphic'
+import isomorphicWebpackConfig from '../isomorphic.config'
 import AssetsPlugin from 'assets-webpack-plugin'
 import WebpackAssetsManifest from 'webpack-assets-manifest'
 const {
@@ -19,11 +19,13 @@ const exec = childProcess.execSync
 exec(`rm -rf ${CLIENT_DIST_PATH}`)
 
 const definePluginArgs = {
+	'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
 	'process.env.BROWSER': JSON.stringify(true)
 }
 
 const baseBuild = {
 	name: 'client',
+	target: 'web',
 	entry: {
 		client: path.join(srcPath, './client')
 	},
@@ -36,6 +38,9 @@ const baseBuild = {
 	performance: {
 		hints: false
 	},
+	module: {
+		rules: isomorphicWebpackConfig.module.rules
+	},
 	resolve: {
 		modules: isomorphicWebpackConfig.resolve.modules,
 		extensions: isomorphicWebpackConfig.resolve.extensions.concat()
@@ -45,8 +50,7 @@ const baseBuild = {
 		new AssetsPlugin({
 			path: CLIENT_DIST_PATH
 		})
-	]),
-	target: 'web'
+	])
 }
 
 export default baseBuild
