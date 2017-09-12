@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/Metnew/tiny-universal-skeleton/compare/v0.0.0...v1.0.0) (2017-09-12)
+
+
+### Bug Fixes
+
+* **server:** fix path to server decorator, fix import of server decorator ([b18997e](https://github.com/Metnew/tiny-universal-skeleton/commit/b18997e))
+* **server:** remove flowtypes ([f389c87](https://github.com/Metnew/tiny-universal-skeleton/commit/f389c87))
+* **server/decorator:** remove flowtypes ([411f421](https://github.com/Metnew/tiny-universal-skeleton/commit/411f421))
+* **webpack_config:** rename to devServer, fix import path of client and server webpack configs ([bce1f3a](https://github.com/Metnew/tiny-universal-skeleton/commit/bce1f3a))
+
+
+### Features
+
+* **package.json:** add new deps, remove old, update deps, add more scripts ([96cc268](https://github.com/Metnew/tiny-universal-skeleton/commit/96cc268))
+* **package.json:** install chalk, remove jest config ([a249b09](https://github.com/Metnew/tiny-universal-skeleton/commit/a249b09))
+* **server:** add console.log with chalk ([a78f809](https://github.com/Metnew/tiny-universal-skeleton/commit/a78f809))
+* **tests:** add basic tests ([f8d1a3a](https://github.com/Metnew/tiny-universal-skeleton/commit/f8d1a3a))
+* **webpack_config:** split client's webpack config in dev,prod,base ([51704f7](https://github.com/Metnew/tiny-universal-skeleton/commit/51704f7))
+* **webpack_config:** split server's webpack config in dev,prod,base ([cc28446](https://github.com/Metnew/tiny-universal-skeleton/commit/cc28446))
+
+
+
 <a name="0.0.0"></a>
 # 0.0.0 (2017-09-12)
 
