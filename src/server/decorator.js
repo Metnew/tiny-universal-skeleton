@@ -1,6 +1,3 @@
-/*
- * @flow
- */
 import addMiddlewares from './middlewares'
 import API from './api'
 import SSR from './ssr'
@@ -10,7 +7,7 @@ import SSR from './ssr'
  * @param  {Object} app - Express server instance
  * @return {Object}     - Decorated server instance
  */
-export default (app: Object): Object => {
+export default function (app) {
 	// Add global middlewares
 	addMiddlewares(app)
 	// Add API
