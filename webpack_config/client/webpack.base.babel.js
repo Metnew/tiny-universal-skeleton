@@ -4,7 +4,6 @@ import webpack from 'webpack'
 import config from '../config'
 import isomorphicWebpackConfig from '../isomorphic.config'
 import AssetsPlugin from 'assets-webpack-plugin'
-import WebpackAssetsManifest from 'webpack-assets-manifest'
 const {
 	CLIENT_DIST_PATH,
 	NODE_ENV,
