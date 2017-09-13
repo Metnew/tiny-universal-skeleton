@@ -19,13 +19,8 @@
 		"jest": true
 	},
 	"rules": {
-		"no-unused-vars": 0,
+		"prefer-const": "warn",
 		"no-tabs": 0,
 		"indent": [2, "tab"]
-	},
-	"globals": {
-		"i18n": true,
-		"Raven": true,
-		"ga": true
 	}
 }
