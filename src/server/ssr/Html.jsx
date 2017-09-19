@@ -27,9 +27,13 @@ const IndexHTMLComponent = ({App, assets}) => {
 		return html
 	}
 
+	const itIsUniversal = false
+	const hello = itIsUniversal ? '<h2>Hello from hot-reloaded server!</h2>' : ''
+
 	return `<html>
 			<head>${createHead()}<head>
 			<body>
+				${hello}
 				${createBody()}
 			</body>
 		</html>`
