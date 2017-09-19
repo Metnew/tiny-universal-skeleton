@@ -21,8 +21,7 @@ const devMiddleWare = webpackDevMiddleware(compiler, {
 
 // NOTE: Every time we apply our compiled code to development server
 // We add new middlewares from new code, but don't remove old middlewares from old code
-
-// Number of middlewares that our app should has
+// Number of middlewares that Express app should have out-of-box
 let prevSize = null
 /**
  * @desc Adds dev middlewares + your code to an express server instance
@@ -34,29 +33,38 @@ export default function (app) {
 	 * @param  {Function}  serverSideCode - compiled server-side code
 	 */
 	const done = serverSideCode => {
-		// Get current stack of the app (e.g. applied middlewares)
+		// Get current stack of the app (e.g. applied to Express server middlewares)
 		const {stack} = app._router
+		// get current lenght of stack
 		const {length} = stack
+		// When we run server first time we don't have any applied middlewares from compiled code
 		prevSize = prevSize || length
 		if (length > prevSize) {
-			// Remove old compiled code
+			// TL;DR: Remove already compiled code
+			// That means that we already applied our code to devServer
+			// And we can remove already applied middlewares from the last compilation
 			app._router.stack = stack.slice(0, prevSize)
 		}
-		// Apply newly compiled code
+		// Apply newly compiled code to our app
 		serverSideCode(app)
 	}
 
-	app.use(devMiddleWare)
-	app.use(
-		webpackHotMiddleware(
-			compiler.compilers.find(compiler => compiler.name === 'client'),
-			{
-				log: console.log
-			}
-		)
-	)
+	// webpack Compiler for server
 	const serverCompiler = compiler.compilers.find(
 		compiler => compiler.name === 'server'
 	)
+	// webpack Compiler for client
+	const clientCompiler = compiler.compilers.find(
+		compiler => compiler.name === 'client'
+	)
+	// Add webpack-dev-middleware
+	app.use(devMiddleWare)
+	// Add webpack-hot-middleware
+	app.use(
+		webpackHotMiddleware(clientCompiler, {
+			log: console.log
+		})
+	)
+	// Run `done` after serverCompiler emits `done` with a newly compiled code as argument
 	webpackGetCodeOnDone(serverCompiler, done)
 }
