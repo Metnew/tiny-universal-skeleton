@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/Metnew/tiny-universal-skeleton/compare/v1.1.0...v1.2.0) (2017-09-19)
+
+
+### Bug Fixes
+
+* **.eslintrc:** remove prefer-const rule ([33e63b6](https://github.com/Metnew/tiny-universal-skeleton/commit/33e63b6))
+* **.eslintrc:** remove unused globals ([942ad7f](https://github.com/Metnew/tiny-universal-skeleton/commit/942ad7f))
+* fix eslint errors ([c529c72](https://github.com/Metnew/tiny-universal-skeleton/commit/c529c72))
+* remove webpack-assets-manifest from the project ([8151e5e](https://github.com/Metnew/tiny-universal-skeleton/commit/8151e5e))
+
+
+### Features
+
+* **package.json:** update deps versions ([2ec1e3a](https://github.com/Metnew/tiny-universal-skeleton/commit/2ec1e3a))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/Metnew/tiny-universal-skeleton/compare/v1.0.0...v1.1.0) (2017-09-12)
 
