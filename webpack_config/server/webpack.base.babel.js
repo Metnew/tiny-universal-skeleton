@@ -34,6 +34,7 @@ const baseWebpackConfig = {
 	name: 'server',
 	entry,
 	target: 'node',
+	devtool,
 	output: {
 		path: path.join(config.distPath, './server'),
 		filename: 'index.js',

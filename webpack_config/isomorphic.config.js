@@ -8,9 +8,7 @@ import webpack from 'webpack'
 const {
 	srcPath,
 	rootPath,
-	srcCommonPath,
-	NODE_ENV,
-	isProduction
+	NODE_ENV
 } = config
 
 const definePluginArgs = {
