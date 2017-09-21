@@ -8,10 +8,7 @@ const {
 	CLIENT_DIST_PATH,
 	NODE_ENV,
 	srcPath,
-	distPath,
-	publicPath,
-	isProduction,
-	title
+	publicPath
 } = config
 
 const exec = childProcess.execSync
