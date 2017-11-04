@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/Metnew/tiny-universal-skeleton/compare/v1.2.0...v1.3.0) (2017-11-04)
+
+
+### Bug Fixes
+
+* **client:** adapt to R16 ([b440c71](https://github.com/Metnew/tiny-universal-skeleton/commit/b440c71))
+* **package.json:** remove unused deps ([569c1b2](https://github.com/Metnew/tiny-universal-skeleton/commit/569c1b2))
+* **webpack_config:** fix eslint issues ([c310f19](https://github.com/Metnew/tiny-universal-skeleton/commit/c310f19))
+
+
+### Features
+
+* **.babelrc:** use babel-preset-env, remove unused plugins and presets ([ca3bfd4](https://github.com/Metnew/tiny-universal-skeleton/commit/ca3bfd4))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/Metnew/tiny-universal-skeleton/compare/v1.1.0...v1.2.0) (2017-09-19)
 
