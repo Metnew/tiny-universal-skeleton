@@ -1,6 +1,6 @@
 # Tiny-universal-skeleton
 
-> If you want full-featured advanced starter with this feature -> visit [this repo](https://github.com/Metnew/react-semantic.ui-starter/tree/dev). It's currently **in progress**, give me some time to finish it and "Watch" the repo.
+> ### If you want full-featured advanced starter with this feature -> take a look at [SUIcrux](https://github.com/Metnew/suicrux)!
 
 ![](./example.gif)
 
