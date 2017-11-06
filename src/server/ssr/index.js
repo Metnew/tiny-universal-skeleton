@@ -1,11 +1,12 @@
 import React from 'react'
 import {renderToString} from 'react-dom/server'
-import assets from 'webpack-assets'
 import Html from './Html'
 import Root from 'common'
+import fs from 'fs'
 
 export default (req, res, next) => {
 	const App = renderToString(<Root />)
-	const html = Html({App, assets})
+	const assets = JSON.parse(fs.readFileSync(`webpack-assets`, 'utf8'))
+	const html = Html({App, assets: JSON.parse(assets)})
 	res.send(html)
 }
