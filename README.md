@@ -1,6 +1,6 @@
 # Tiny-universal-skeleton
 
-> ### If you want full-featured advanced starter with this feature -> take a look at [SUIcrux](https://github.com/Metnew/suicrux)!
+> ### If you want advanced starter with this feature -> take a look at [SUIcrux](https://github.com/Metnew/suicrux)!
 
 ![](./example.gif)
 
@@ -21,6 +21,7 @@ Imagine that you have server, development server and client app:
 > In case of a bug inside a complicated software with low community support you'll be the one person who cares about this bug.
 
 This solution is **very-very simple**. But it's not the best, of course.
+> 99.9% of universal starters/frameworks run 2 process on 2 ports with 2 different FS. We run only one process on one port with the same FS.
 
 TL;DR:
 
@@ -52,7 +53,7 @@ app.listen(PORT, () => {
 })
 ```
 
-Did you notice `serverDecorator()` function? Let's figure out what's the hack is this:
+Did you notice `serverDecorator()` function? Let's figure out what's the hack is it:
 
 ## Main server decorator (src/server/decorator.js)
 
@@ -81,7 +82,7 @@ export default function (app) {
 
 ## Server decorator in development (webpack_config/devServer.js)
 
-TL;DR: after every compilation we remove already applied middlewares from Express app (from middlewares stack) and apply new code to server.
+TL;DR: after every compilation we remove already applied middlewares from Express app (from middlewares stack) and apply new ones.
 
 In development our server decorator looks like:
 
@@ -139,7 +140,12 @@ export default function (app) {
 
 ## Bundle server with Webpack
 
-I don't want to argue about **"Is it ok to bundle server-side code with Webpack?"** Shortly, **it's a great idea.** **Main features**: tree-shaking, code optimizations, high configuration possibilities with `webpack.DefinePlugin()`. There are other cool things that you could do with Webpack and your server. Use your imagination :smiling_imp:<br>
+I don't want to argue about **"Is it ok to bundle server-side code with Webpack?"** Shortly, **it's a great idea.** 
+**Main features**: 
+- tree-shaking, 
+- code optimizations, 
+- high configuration possibilities with `webpack.DefinePlugin()`. 
+
 **Main cons**: it's hard to work with dirs, because webpack supports `__dirname` not as you expected. But it's easy to solve this problem with webpack `alias`. Read more in webpack docs.
 
 ### Webpack.config
@@ -204,8 +210,7 @@ As you already know:
 ### Summary
 
 You can easily make your universal app hot-reloaded in few lines of code.    
-Performance is ok, you can clone project and run it.         
-Currently, there are no benchmarks and comparisons, but it works even on huge projects.
+Performance is good, there are no benchmarks and comparisons, but it works well even on huge projects.
 
 ### License
 
