@@ -6,7 +6,7 @@ import fs from 'fs'
 
 export default (req, res, next) => {
 	const App = renderToString(<Root />)
-	const assets = JSON.parse(fs.readFileSync(`webpack-assets`, 'utf8'))
+	const assets = fs.readFileSync(`webpack-assets`, 'utf8')
 	const html = Html({App, assets: JSON.parse(assets)})
 	res.send(html)
 }
